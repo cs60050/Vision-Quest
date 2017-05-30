@@ -23,7 +23,7 @@ def main(testfile=None):
 		ts=np.array(tf)
 		return(clf.predict(ts))
 	else:
-		pred=[int(a) for a in clf.predict(b[0])]
+		pred=[int(a+.1) for a in clf.predict(b[0])]
 		nc=sum(int(x==y) for x,y in zip(pred,b[1]))
 		print "{0} of {1} correct = {2}%".format(nc,len(b[1]),(100.0*float(nc)/len(b[1])))
 		
